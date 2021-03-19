@@ -1,0 +1,1 @@
+go build -ldflags "-H=windowsgui -linkmode=external -s -w" -buildmode=pie -trimpath
