@@ -1,2 +1,2 @@
-CityName = "Moscow"
-UpdatePeriod = 300_000_000_000 # Кол-во минут * 1_000_000_000
+CityName = "Moscow" # Населённый пункт
+UpdatePeriodMin = 5 # Период обновления в минутах

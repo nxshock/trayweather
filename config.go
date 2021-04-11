@@ -2,15 +2,14 @@ package main
 
 import (
 	"log"
-	"time"
 
 	"github.com/ilyakaznacheev/cleanenv"
 	"github.com/ncruces/zenity"
 )
 
 type Config struct {
-	CityName     string        `toml:"CityName" env:"CITY_NAME"`
-	UpdatePeriod time.Duration `toml:"UpdatePeriod", env:"UPDATE_PERIOD"`
+	CityName        string `toml:"CityName" env:"CITY_NAME"`
+	UpdatePeriodMin int    `toml:"UpdatePeriod", env:"UPDATE_PERIOD"`
 }
 
 var config Config
@@ -29,10 +28,8 @@ func init() {
 		log.Fatalln("Город (поле CityName) не может быть пустым.")
 	}
 
-	log.Println(config.UpdatePeriod)
-
-	if config.UpdatePeriod < time.Minute {
+	if config.UpdatePeriodMin <= 0 {
 		log.Printf("Частота обновлений слишком низкая (%s), будет установлено значение в одну минуту.")
-		config.UpdatePeriod = time.Minute
+		config.UpdatePeriodMin = 1
 	}
 }

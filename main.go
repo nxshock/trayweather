@@ -54,7 +54,7 @@ func update() {
 
 		systray.SetTooltip(fmt.Sprintf("%s\n%.1f °C (%.1f °C)", c.Description(), c.CurrentTemperature(), c.FeelsLikeTemperature()))
 		setTrayIcon(c.IconName())
-		time.Sleep(config.UpdatePeriod)
+		time.Sleep(time.Duration(config.UpdatePeriodMin) * time.Minute)
 	}
 }
 
