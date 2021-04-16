@@ -28,7 +28,7 @@ func (w *WeatherData) Description() string {
 }
 func (w *WeatherData) IconName() string {
 	switch w.description {
-	case "Ясно":
+	case "Ясно", "Малооблачно":
 		return "01d.ico"
 	case "Облачно с прояснениями":
 		return "02d.ico"
