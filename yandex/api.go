@@ -34,7 +34,7 @@ func (w *WeatherData) IconName() string {
 		return "02d.ico"
 	case "Пасмурно":
 		return "03d.ico"
-	case "Небольшой снег":
+	case "Небольшой снег", "Небольшой дождь":
 		return "09d.ico"
 	case "Снег":
 		return "13d.ico"
